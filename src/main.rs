@@ -8,3 +8,4 @@ error_chain! {
         IoError(std::io::Error);
     }
 }
+#[tokio:main]
