@@ -18,16 +18,4 @@ async fn main() -> Result <()> {
         return Ok(());
     }
 
-        let  link= &args[1];
-
-        let res = reqwest::get(link).await?.text().await?;
-
-        println!("Links on web page '{}' :", link);
-
-        Document::from(res.as_str())
-        .find(Name("a"))
-        .filter_map(|n|n.attr("href"))
-        .for_each(|x| println!("{}", x));
-
-        Ok(())
 }
